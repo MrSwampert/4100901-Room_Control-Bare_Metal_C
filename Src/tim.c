@@ -1,10 +1,3 @@
-/**
- ******************************************************************************
- * @file           : tim.c
- * @author         : Sam C
- * @brief          : Timer driver for STM32L476RGTx
- ******************************************************************************
- */
 #include "tim.h"
 #include "rcc.h"  // Para rcc_tim3_clock_enable y TIM_PCLK_FREQ_HZ
 #include "gpio.h" // Para configurar pin PB4

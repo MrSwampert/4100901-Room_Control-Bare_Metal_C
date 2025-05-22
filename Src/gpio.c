@@ -1,10 +1,3 @@
-/**
- ******************************************************************************
- * @file           : gpio.c
- * @author         : Sam C
- * @brief          : GPIO driver for STM32L476RGTx
- ******************************************************************************
- */
 #include "gpio.h"
 #include "rcc.h"
 #include "nvic.h"
@@ -12,6 +5,7 @@
 void gpio_setup_pin(GPIO_TypeDef *gpio_port, uint8_t pin_number,
                     uint8_t mode, uint8_t alternate_function)
 {
+
     // 1. Habilitar el reloj para el puerto GPIO correspondiente
     //    La función rcc_gpio_clock_enable se encarga de esto.
     rcc_gpio_clock_enable(gpio_port);
@@ -49,7 +43,6 @@ void gpio_write_pin(GPIO_TypeDef *gpio_port, uint8_t pin_number, uint8_t pin_sta
 
 void gpio_toggle_pin(GPIO_TypeDef *gpio_port, uint8_t pin_number)
 {
-    // Alternar el estado del pin usando ODR (Output Data Register)
     gpio_port->ODR ^= (1U << pin_number);
 }
 
@@ -75,6 +68,6 @@ void EXTI15_10_IRQHandler(void) {
         // 2. Limpiar el flag de pendiente de la interrupción (escribiendo '1')
         EXTI->PR1 |= (1U << 13);
         // 3. Procesar boton presionado
+        room_control_on_button_press();
     }
 }
-

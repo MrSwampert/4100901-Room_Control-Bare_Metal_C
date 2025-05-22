@@ -1,10 +1,3 @@
-/**
- ******************************************************************************
- * @file           : uart.h
- * @author         : Sam C
- * @brief          : Header file for UART driver for STM32L476RGTx
- ******************************************************************************
- */
 #ifndef UART_H
 #define UART_H
 
@@ -29,7 +22,7 @@ typedef struct {
 #define USART2_BASE         (0x40004400UL)
 #define USART2              ((USART_TypeDef *) USART2_BASE)
 
-
+// Prototipos de funciones
 void uart2_init(uint32_t baud_rate);
 
 void uart2_send_char(char c);

@@ -1,10 +1,3 @@
-/**
- ******************************************************************************
- * @file           : room_control.h
- * @author         : Sam C
- * @brief          : Header file for Room Control Application
- ******************************************************************************
- */
 #ifndef ROOM_CONTROL_H
 #define ROOM_CONTROL_H
 
