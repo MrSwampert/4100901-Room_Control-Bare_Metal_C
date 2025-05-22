@@ -8,7 +8,7 @@
 void heartbeat_led_toggle(void)
 {
     static uint32_t last_tick = 0;
-    if (systick_get_tick() - last_tick >= 100000) { // Cambia cada 500 ms
+    if (systick_get_tick() - last_tick >= 1000) { // Cambia cada 500 ms
         gpio_toggle_pin(HEARTBEAT_LED_PORT, HEARTBEAT_LED_PIN);
         last_tick = systick_get_tick();
     }
